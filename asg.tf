@@ -266,7 +266,7 @@ resource "aws_launch_configuration" "master-eu-west-1c-masters-aidincluster-com"
 resource "aws_launch_configuration" "nodes-aidincluster-com" {
   name_prefix                 = "nodes.aidincluster.com-"
   image_id                    = "ami-01666ac8d55438d0b"
-  instance_type               = "t2.micro"
+  instance_type               = "${var.node_instance_type}"
   key_name                    = "${aws_key_pair.kubernetes-aidincluster-com-1d3e75ff5751b061c0b031ff0ec74421.id}"
   iam_instance_profile        = "${aws_iam_instance_profile.nodes-aidincluster-com.id}"
   security_groups             = ["${aws_security_group.nodes-aidincluster-com.id}"]
