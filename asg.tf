@@ -141,8 +141,8 @@ resource "aws_autoscaling_group" "master-eu-west-1c-masters-aidincluster-com" {
 resource "aws_autoscaling_group" "nodes-aidincluster-com" {
   name                 = "nodes.aidincluster.com"
   launch_configuration = "${aws_launch_configuration.nodes-aidincluster-com.id}"
-  max_size             = 2
-  min_size             = 2
+  max_size             = "${var.node_max_size}"
+  min_size             = "${var.node_min_size}"
   vpc_zone_identifier  = ["${aws_subnet.eu-west-1a-aidincluster-com.id}", "${aws_subnet.eu-west-1b-aidincluster-com.id}", "${aws_subnet.eu-west-1c-aidincluster-com.id}"]
 
   tag = {
