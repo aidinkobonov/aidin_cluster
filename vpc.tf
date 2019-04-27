@@ -25,7 +25,3 @@ resource "aws_vpc_dhcp_options_association" "aidincluster-com" {
   vpc_id          = "${aws_vpc.aidincluster-com.id}"
   dhcp_options_id = "${aws_vpc_dhcp_options.aidincluster-com.id}"
 }
-
-terraform = {
-  required_version = ">= 0.9.3"
-}

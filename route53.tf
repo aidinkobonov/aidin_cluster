@@ -26,15 +26,5 @@ resource "aws_route53_zone_association" "Z3F96YL8YVEKVE" {
   vpc_id  = "${aws_vpc.aidincluster-com.id}"
 }
 
-resource "aws_route_table" "aidincluster-com" {
-  vpc_id = "${aws_vpc.aidincluster-com.id}"
-
-  tags = {
-    KubernetesCluster                        = "aidincluster.com"
-    Name                                     = "aidincluster.com"
-    "kubernetes.io/cluster/aidincluster.com" = "owned"
-    "kubernetes.io/kops/role"                = "public"
-  }
-}
 
 }
