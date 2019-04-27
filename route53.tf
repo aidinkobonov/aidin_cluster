@@ -6,6 +6,8 @@ resource "aws_route53_record" "api-aidincluster-com" {
     name                   = "${aws_elb.api-aidincluster-com.dns_name}"
     zone_id                = "${aws_elb.api-aidincluster-com.zone_id}"
     evaluate_target_health = false
+  }
+
     zone_id = "/hostedzone/Z3F96YL8YVEKVE"
 }
 resource "aws_route53_record" "bastion-aidincluster-com" {
@@ -27,4 +29,3 @@ resource "aws_route53_zone_association" "Z3F96YL8YVEKVE" {
 }
 
 
-}
