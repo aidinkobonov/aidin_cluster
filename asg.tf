@@ -1,8 +1,8 @@
 resource "aws_autoscaling_group" "bastions-aidincluster-com" {
   name                 = "bastions.aidincluster.com"
   launch_configuration = "${aws_launch_configuration.bastions-aidincluster-com.id}"
-  max_size             = 1
-  min_size             = 1
+  max_size             = "${var.bastion_max_size}"
+  min_size             = "${var.bastion_min_size}"
   vpc_zone_identifier  = ["${aws_subnet.utility-eu-west-1a-aidincluster-com.id}", "${aws_subnet.utility-eu-west-1b-aidincluster-com.id}", "${aws_subnet.utility-eu-west-1c-aidincluster-com.id}"]
 
   tag = {
