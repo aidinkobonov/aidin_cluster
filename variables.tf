@@ -14,7 +14,7 @@ variable "bastion_instance_type"    {}
 
 variable "Env"              {}
 
-variable "Createb_by"       {}
+variable "Created_by"       {}
 
 variable "Dept"             {}
 
